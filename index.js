@@ -8,9 +8,7 @@ const chalk = require('chalk');
 const pkg = require('./package.json');
 const axios = require('axios');
 
-const getRandomPort = () => Math.floor(Math.random() * (65535 - 1024) + 1024);
-const PORT = getRandomPort();
-let currentPort = PORT;
+const port = process.env.PORT || 8080;
 const REPL_HOME = `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`.toLowerCase();
 
 app.get('/', function(req, res) {
